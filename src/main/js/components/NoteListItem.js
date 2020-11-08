@@ -19,7 +19,20 @@ class NoteListItem extends React.Component{
     }
 
     async handleDeleteNote(){
-        this.props.onNoteDelete(this.props.note.id)
+
+        const options = {
+            method: 'DELETE',
+        }
+
+        try{
+            const data = await notesClient(`deleteNote/${this.props.note.id}`, options);
+            this.props.onNoteDelete(this.props.note.id)
+        }
+        catch (e) {
+            console.log(e)
+            // send toaster message here
+        }
+
     }
 
 

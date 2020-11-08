@@ -25,8 +25,11 @@ const notesClient = async (endpoint, options) => {
     }
     try {
         let response = await fetch(url, reqOptions);
-        let resJSON = await response.json();
-        return resJSON;
+        if(reqOptions.method !== "DELETE"){
+            let resJSON = await response.json();
+            return resJSON;
+        }
+
     } catch (e) {
         /**
          * Preferably this would be sent to a logging service to be stored and
