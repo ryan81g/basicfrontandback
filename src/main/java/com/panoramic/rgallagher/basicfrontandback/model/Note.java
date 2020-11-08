@@ -1,10 +1,12 @@
 package com.panoramic.rgallagher.basicfrontandback.model;
 
+import org.springframework.hateoas.RepresentationModel;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name="notes")
-public class Note {
+public class Note extends RepresentationModel<Note> {
 
     /**
      * In production setting, since this would be specific to a user,
