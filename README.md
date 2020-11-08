@@ -13,7 +13,7 @@ There is a run script provided as well in this case after the build
 
 `run.sh -d info`
 
-The argument that the run command take is a logging level of wither info or error
+The argument that the run command take is a logging level of either info or error
 
 
 Alternatively, there is a provided Dockerfile.
